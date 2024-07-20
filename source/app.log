@@ -1,0 +1,321 @@
+2024-07-20 19:04:47 - b" * Serving Flask app 'app'"
+2024-07-20 19:04:47 - b' * Debug mode: on'
+2024-07-20 19:04:48 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.1.6:5000
+2024-07-20 19:04:48 - [33mPress CTRL+C to quit[0m
+2024-07-20 19:04:48 -  * Restarting with stat
+2024-07-20 19:04:48 -  * Debugger is active!
+2024-07-20 19:04:48 -  * Debugger PIN: 897-076-021
+2024-07-20 19:35:11 - Traceback (most recent call last):
+2024-07-20 19:35:11 -   File "C:\DEV\SMBwebguy\ACTIVE\source\app.py", line 76, in <module>
+2024-07-20 19:35:11 - app.run(debug=True, host="0.0.0.0", port=5000)
+2024-07-20 19:35:11 - ^
+2024-07-20 19:35:11 - ^
+2024-07-20 19:35:11 - ^
+2024-07-20 19:35:11 - NameError
+2024-07-20 19:35:11 - :
+2024-07-20 19:35:11 - name 'app' is not defined
+2024-07-20 19:36:10 - Traceback (most recent call last):
+2024-07-20 19:36:10 -   File "C:\DEV\SMBwebguy\ACTIVE\source\app.py", line 77, in <module>
+2024-07-20 19:36:10 - app.run(debug=True, host="0.0.0.0", port=5000)
+2024-07-20 19:36:10 - ^
+2024-07-20 19:36:10 - ^
+2024-07-20 19:36:10 - ^
+2024-07-20 19:36:10 - NameError
+2024-07-20 19:36:10 - :
+2024-07-20 19:36:10 - name 'app' is not defined
+2024-07-20 19:38:10 - b" * Serving Flask app 'app'"
+2024-07-20 19:38:10 - b' * Debug mode: on'
+2024-07-20 19:38:11 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.1.6:5000
+2024-07-20 19:38:11 - [33mPress CTRL+C to quit[0m
+2024-07-20 19:38:11 -  * Restarting with stat
+2024-07-20 19:38:11 -  * Debugger is active!
+2024-07-20 19:38:11 -  * Debugger PIN: 897-076-021
+2024-07-20 19:38:21 - 127.0.0.1 - - [20/Jul/2024 19:38:21] "[33mPOST /login HTTP/1.1[0m" 404 -
+2024-07-20 19:38:23 - 127.0.0.1 - - [20/Jul/2024 19:38:23] "[33mPOST /login HTTP/1.1[0m" 404 -
+2024-07-20 19:38:24 - 127.0.0.1 - - [20/Jul/2024 19:38:24] "[33mGET /login HTTP/1.1[0m" 404 -
+2024-07-20 19:38:27 - Accessing index
+2024-07-20 19:38:27 - 127.0.0.1 - - [20/Jul/2024 19:38:27] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2024-07-20 19:38:27 - Traceback (most recent call last):
+2024-07-20 19:38:27 -   File "C:\python\Lib\site-packages\flask\app.py", line 1498, in __call__
+2024-07-20 19:38:27 -     return self.wsgi_app(environ, start_response)
+2024-07-20 19:38:27 -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-07-20 19:38:27 -   File "C:\python\Lib\site-packages\flask\app.py", line 1476, in wsgi_app
+2024-07-20 19:38:27 -     response = self.handle_exception(e)
+2024-07-20 19:38:27 -                ^^^^^^^^^^^^^^^^^^^^^^^^
+2024-07-20 19:38:27 -   File "C:\python\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+2024-07-20 19:38:27 -     response = self.full_dispatch_request()
+2024-07-20 19:38:27 -                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-07-20 19:38:27 - 127.0.0.1 - - [20/Jul/2024 19:38:27] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-07-20 19:38:27 -   File "C:\python\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+2024-07-20 19:38:27 -     rv = self.handle_user_exception(e)
+2024-07-20 19:38:27 - 127.0.0.1 - - [20/Jul/2024 19:38:27] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-07-20 19:38:27 -          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-07-20 19:38:27 -   File "C:\python\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+2024-07-20 19:38:27 -     rv = self.dispatch_request()
+2024-07-20 19:38:27 -          ^^^^^^^^^^^^^^^^^^^^^^^
+2024-07-20 19:38:27 -   File "C:\python\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+2024-07-20 19:38:27 - 127.0.0.1 - - [20/Jul/2024 19:38:27] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-07-20 19:38:27 -     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+2024-07-20 19:38:27 - 127.0.0.1 - - [20/Jul/2024 19:38:27] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-07-20 19:38:27 -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-07-20 19:38:27 -   File "C:\DEV\SMBwebguy\ACTIVE\source\app.py", line 85, in index
+2024-07-20 19:38:27 -     return redirect(url_for("login"))
+2024-07-20 19:38:27 -                     ^^^^^^^^^^^^^^^^^
+2024-07-20 19:38:27 - 127.0.0.1 - - [20/Jul/2024 19:38:27] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-07-20 19:38:27 -   File "C:\python\Lib\site-packages\flask\helpers.py", line 220, in url_for
+2024-07-20 19:38:27 -     return current_app.url_for(
+2024-07-20 19:38:27 -            ^^^^^^^^^^^^^^^^^^^^
+2024-07-20 19:38:27 -   File "C:\python\Lib\site-packages\flask\app.py", line 1084, in url_for
+2024-07-20 19:38:27 -     return self.handle_url_build_error(error, endpoint, values)
+2024-07-20 19:38:27 -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-07-20 19:38:27 -   File "C:\python\Lib\site-packages\flask\app.py", line 1073, in url_for
+2024-07-20 19:38:27 -     rv = url_adapter.build(  # type: ignore[union-attr]
+2024-07-20 19:38:27 -          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-07-20 19:38:28 -   File "C:\python\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+2024-07-20 19:38:28 -     raise BuildError(endpoint, values, method, self)
+2024-07-20 19:38:28 - werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'login'. Did you mean 'index' instead?
+2024-07-20 19:41:44 -  * Detected change in 'C:\\DEV\\SMBwebguy\\ACTIVE\\source\\app.py', reloading
+2024-07-20 19:41:44 -  * Restarting with stat
+2024-07-20 19:41:44 -  * Debugger is active!
+2024-07-20 19:41:44 -  * Debugger PIN: 897-076-021
+2024-07-20 19:42:28 -  * Detected change in 'C:\\DEV\\SMBwebguy\\ACTIVE\\source\\app.py', reloading
+2024-07-20 19:42:28 -  * Restarting with stat
+2024-07-20 19:42:29 -  * Debugger is active!
+2024-07-20 19:42:29 -  * Debugger PIN: 897-076-021
+2024-07-20 19:42:37 - 127.0.0.1 - - [20/Jul/2024 19:42:37] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-07-20 19:42:40 - Accessing index
+2024-07-20 19:42:40 - 127.0.0.1 - - [20/Jul/2024 19:42:40] "[32mGET / HTTP/1.1[0m" 302 -
+2024-07-20 19:42:40 - 127.0.0.1 - - [20/Jul/2024 19:42:40] "GET /login HTTP/1.1" 200 -
+2024-07-20 19:42:40 - 127.0.0.1 - - [20/Jul/2024 19:42:40] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 19:42:40 - 127.0.0.1 - - [20/Jul/2024 19:42:40] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 19:42:40 - 127.0.0.1 - - [20/Jul/2024 19:42:40] "[36mGET /static/js/login.js HTTP/1.1[0m" 304 -
+2024-07-20 19:42:42 - Attempting login with username: crn-ws1
+2024-07-20 19:42:42 - Received password
+2024-07-20 19:42:42 - Password decoded successfully
+2024-07-20 19:42:42 - Current session username: None
+2024-07-20 19:42:42 - Reading config from: users.json
+2024-07-20 19:42:42 - Loaded users
+2024-07-20 19:42:42 - User not found: crn-ws1
+2024-07-20 19:42:42 - 127.0.0.1 - - [20/Jul/2024 19:42:42] "POST /login HTTP/1.1" 200 -
+2024-07-20 19:42:48 - 127.0.0.1 - - [20/Jul/2024 19:42:48] "GET /create_user HTTP/1.1" 200 -
+2024-07-20 19:42:48 - 127.0.0.1 - - [20/Jul/2024 19:42:48] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 19:42:48 - 127.0.0.1 - - [20/Jul/2024 19:42:48] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 19:42:48 - 127.0.0.1 - - [20/Jul/2024 19:42:48] "[36mGET /static/js/create_user.js HTTP/1.1[0m" 304 -
+2024-07-20 19:42:48 - Getting users
+2024-07-20 19:42:48 - Current session username: None
+2024-07-20 19:42:48 - Reading config from: users.json
+2024-07-20 19:42:48 - 127.0.0.1 - - [20/Jul/2024 19:42:48] "GET /get_users HTTP/1.1" 200 -
+2024-07-20 19:42:50 - Creating user: crn-ws1
+2024-07-20 19:42:50 - Reading config from: users.json
+2024-07-20 19:42:50 - Writing config to: users.json
+2024-07-20 19:42:50 - Adding user directory for crn-ws1
+2024-07-20 19:42:50 - Writing config to: users\crn-ws1\servers_credentials.json
+2024-07-20 19:42:50 - Writing config to: users\crn-ws1\mappings.json
+2024-07-20 19:42:50 - 127.0.0.1 - - [20/Jul/2024 19:42:50] "POST /create_user HTTP/1.1" 200 -
+2024-07-20 19:42:50 - Getting users
+2024-07-20 19:42:50 - Current session username: None
+2024-07-20 19:42:50 - Reading config from: users.json
+2024-07-20 19:42:50 - 127.0.0.1 - - [20/Jul/2024 19:42:50] "GET /get_users HTTP/1.1" 200 -
+2024-07-20 19:42:54 - Accessing index
+2024-07-20 19:42:54 - 127.0.0.1 - - [20/Jul/2024 19:42:54] "[32mGET / HTTP/1.1[0m" 302 -
+2024-07-20 19:42:54 - 127.0.0.1 - - [20/Jul/2024 19:42:54] "GET /login HTTP/1.1" 200 -
+2024-07-20 19:42:54 - 127.0.0.1 - - [20/Jul/2024 19:42:54] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 19:42:54 - 127.0.0.1 - - [20/Jul/2024 19:42:54] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 19:42:54 - 127.0.0.1 - - [20/Jul/2024 19:42:54] "[36mGET /static/js/login.js HTTP/1.1[0m" 304 -
+2024-07-20 19:42:56 - Attempting login with username: crn-ws1
+2024-07-20 19:42:56 - Received password
+2024-07-20 19:42:56 - Password decoded successfully
+2024-07-20 19:42:56 - Current session username: None
+2024-07-20 19:42:56 - Reading config from: users.json
+2024-07-20 19:42:56 - Loaded users
+2024-07-20 19:42:56 - Login successful for user: crn-ws1
+2024-07-20 19:42:56 - Adding user directory for crn-ws1
+2024-07-20 19:42:56 - Disconnecting all SMB shares
+2024-07-20 19:42:56 - Mounting disks for user
+2024-07-20 19:42:56 - Current session username: crn-ws1
+2024-07-20 19:42:56 - Reading mappings from users\crn-ws1\mappings.json
+2024-07-20 19:42:56 - Reading server credentials from users\crn-ws1\servers_credentials.json
+2024-07-20 19:42:56 - Reading config from: users\crn-ws1\mappings.json
+2024-07-20 19:42:56 - Mappings file is empty or invalid: [{'preset_name': 'default', 'mappings': []}]
+2024-07-20 19:42:56 - Error: Mappings file is empty or invalid.
+2024-07-20 19:42:56 - 127.0.0.1 - - [20/Jul/2024 19:42:56] "POST /login HTTP/1.1" 200 -
+2024-07-20 19:42:56 - Listing shares
+2024-07-20 19:42:56 - 127.0.0.1 - - [20/Jul/2024 19:42:56] "GET /list_shares HTTP/1.1" 200 -
+2024-07-20 19:42:56 - 127.0.0.1 - - [20/Jul/2024 19:42:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 19:42:56 - 127.0.0.1 - - [20/Jul/2024 19:42:56] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 19:42:56 - 127.0.0.1 - - [20/Jul/2024 19:42:56] "[36mGET /static/images/logout.png HTTP/1.1[0m" 304 -
+2024-07-20 19:42:56 - 127.0.0.1 - - [20/Jul/2024 19:42:56] "[36mGET /static/images/save.png HTTP/1.1[0m" 304 -
+2024-07-20 19:42:56 - 127.0.0.1 - - [20/Jul/2024 19:42:56] "[36mGET /static/images/reset.png HTTP/1.1[0m" 304 -
+2024-07-20 19:42:56 - 127.0.0.1 - - [20/Jul/2024 19:42:56] "[36mGET /static/js/list_shares.js HTTP/1.1[0m" 304 -
+2024-07-20 19:42:56 - 127.0.0.1 - - [20/Jul/2024 19:42:56] "[36mGET /static/images/back.png HTTP/1.1[0m" 304 -
+2024-07-20 19:42:56 - Listing all shares
+2024-07-20 19:42:56 - Listing mounted shares
+2024-07-20 19:42:56 - Current session username: crn-ws1
+2024-07-20 19:42:56 - Current session username: crn-ws1
+2024-07-20 19:42:56 - Reading config from: users\crn-ws1\servers_credentials.json
+2024-07-20 19:42:56 - Reading config from: users\crn-ws1\servers_credentials.json
+2024-07-20 19:42:56 - Loaded server configurations
+2024-07-20 19:42:56 - Getting drive mappings
+2024-07-20 19:42:56 - Shares listed successfully
+2024-07-20 19:42:56 - 127.0.0.1 - - [20/Jul/2024 19:42:56] "GET /list_mounted_shares HTTP/1.1" 200 -
+2024-07-20 19:42:56 - 127.0.0.1 - - [20/Jul/2024 19:42:56] "GET /list_all_shares HTTP/1.1" 200 -
+2024-07-20 19:42:57 - Configuring servers
+2024-07-20 19:42:57 - 127.0.0.1 - - [20/Jul/2024 19:42:57] "GET /config_servers HTTP/1.1" 200 -
+2024-07-20 19:42:57 - 127.0.0.1 - - [20/Jul/2024 19:42:57] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 19:42:57 - 127.0.0.1 - - [20/Jul/2024 19:42:57] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 19:42:57 - 127.0.0.1 - - [20/Jul/2024 19:42:57] "[36mGET /static/images/logout.png HTTP/1.1[0m" 304 -
+2024-07-20 19:42:57 - 127.0.0.1 - - [20/Jul/2024 19:42:57] "[36mGET /static/images/back.png HTTP/1.1[0m" 304 -
+2024-07-20 19:42:57 - 127.0.0.1 - - [20/Jul/2024 19:42:57] "[36mGET /static/images/addserver.png HTTP/1.1[0m" 304 -
+2024-07-20 19:42:57 - 127.0.0.1 - - [20/Jul/2024 19:42:57] "[36mGET /static/js/config_servers.js HTTP/1.1[0m" 304 -
+2024-07-20 19:42:57 - Getting servers
+2024-07-20 19:42:57 - Current session username: crn-ws1
+2024-07-20 19:42:57 - Reading config from: users\crn-ws1\servers_credentials.json
+2024-07-20 19:42:57 - 127.0.0.1 - - [20/Jul/2024 19:42:57] "GET /get_servers HTTP/1.1" 200 -
+2024-07-20 19:43:09 - Adding server: 192.168.2.22 with nickname: CRN-STR2
+2024-07-20 19:43:09 - Current session username: crn-ws1
+2024-07-20 19:43:09 - Reading config from: users\crn-ws1\servers_credentials.json
+2024-07-20 19:43:09 - Current session username: crn-ws1
+2024-07-20 19:43:09 - Writing config to: users\crn-ws1\servers_credentials.json
+2024-07-20 19:43:09 - 127.0.0.1 - - [20/Jul/2024 19:43:09] "POST /add_server HTTP/1.1" 200 -
+2024-07-20 19:43:09 - Getting servers
+2024-07-20 19:43:09 - Current session username: crn-ws1
+2024-07-20 19:43:09 - Reading config from: users\crn-ws1\servers_credentials.json
+2024-07-20 19:43:09 - 127.0.0.1 - - [20/Jul/2024 19:43:09] "GET /get_servers HTTP/1.1" 200 -
+2024-07-20 19:43:09 - 127.0.0.1 - - [20/Jul/2024 19:43:09] "[36mGET /static/images/delete.png HTTP/1.1[0m" 304 -
+2024-07-20 19:43:10 - Listing shares
+2024-07-20 19:43:10 - 127.0.0.1 - - [20/Jul/2024 19:43:10] "GET /list_shares HTTP/1.1" 200 -
+2024-07-20 19:43:10 - 127.0.0.1 - - [20/Jul/2024 19:43:10] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 19:43:10 - 127.0.0.1 - - [20/Jul/2024 19:43:10] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 19:43:10 - 127.0.0.1 - - [20/Jul/2024 19:43:10] "[36mGET /static/images/logout.png HTTP/1.1[0m" 304 -
+2024-07-20 19:43:10 - 127.0.0.1 - - [20/Jul/2024 19:43:10] "[36mGET /static/images/save.png HTTP/1.1[0m" 304 -
+2024-07-20 19:43:10 - 127.0.0.1 - - [20/Jul/2024 19:43:10] "[36mGET /static/images/reset.png HTTP/1.1[0m" 304 -
+2024-07-20 19:43:10 - 127.0.0.1 - - [20/Jul/2024 19:43:10] "[36mGET /static/js/list_shares.js HTTP/1.1[0m" 304 -
+2024-07-20 19:43:10 - 127.0.0.1 - - [20/Jul/2024 19:43:10] "[36mGET /static/images/back.png HTTP/1.1[0m" 304 -
+2024-07-20 19:43:10 - Listing all shares
+2024-07-20 19:43:10 - Listing mounted shares
+2024-07-20 19:43:11 - Current session username: crn-ws1
+2024-07-20 19:43:11 - Current session username: crn-ws1
+2024-07-20 19:43:11 - Reading config from: users\crn-ws1\servers_credentials.json
+2024-07-20 19:43:11 - Reading config from: users\crn-ws1\servers_credentials.json
+2024-07-20 19:43:11 - Loaded server configurations
+2024-07-20 19:43:11 - Getting drive mappings
+2024-07-20 19:43:11 - 127.0.0.1 - - [20/Jul/2024 19:43:11] "GET /list_mounted_shares HTTP/1.1" 200 -
+2024-07-20 19:43:11 - Shares listed successfully
+2024-07-20 19:43:11 - 127.0.0.1 - - [20/Jul/2024 19:43:11] "GET /list_all_shares HTTP/1.1" 200 -
+2024-07-20 19:43:11 - Getting available drive letters
+2024-07-20 19:43:11 - 127.0.0.1 - - [20/Jul/2024 19:43:11] "[36mGET /static/images/mount.png HTTP/1.1[0m" 304 -
+2024-07-20 19:43:11 - 127.0.0.1 - - [20/Jul/2024 19:43:11] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:11 - Getting available drive letters
+2024-07-20 19:43:11 - 127.0.0.1 - - [20/Jul/2024 19:43:11] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:11 - Getting available drive letters
+2024-07-20 19:43:11 - 127.0.0.1 - - [20/Jul/2024 19:43:11] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:11 - Getting available drive letters
+2024-07-20 19:43:11 - 127.0.0.1 - - [20/Jul/2024 19:43:11] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:11 - Getting available drive letters
+2024-07-20 19:43:11 - 127.0.0.1 - - [20/Jul/2024 19:43:11] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:11 - Getting available drive letters
+2024-07-20 19:43:11 - 127.0.0.1 - - [20/Jul/2024 19:43:11] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:11 - Getting available drive letters
+2024-07-20 19:43:11 - 127.0.0.1 - - [20/Jul/2024 19:43:11] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:11 - Getting available drive letters
+2024-07-20 19:43:11 - 127.0.0.1 - - [20/Jul/2024 19:43:11] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:13 - Getting servers
+2024-07-20 19:43:13 - Current session username: crn-ws1
+2024-07-20 19:43:13 - Reading config from: users\crn-ws1\servers_credentials.json
+2024-07-20 19:43:13 - 127.0.0.1 - - [20/Jul/2024 19:43:13] "GET /get_servers HTTP/1.1" 200 -
+2024-07-20 19:43:13 - Mounting share stup_data from 192.168.2.22 on A
+2024-07-20 19:43:13 - Getting drive mappings
+2024-07-20 19:43:13 - 127.0.0.1 - - [20/Jul/2024 19:43:13] "POST /mount_share HTTP/1.1" 200 -
+2024-07-20 19:43:13 - Listing all shares
+2024-07-20 19:43:13 - Listing mounted shares
+2024-07-20 19:43:13 - Current session username: crn-ws1
+2024-07-20 19:43:13 - Current session username: crn-ws1
+2024-07-20 19:43:13 - Reading config from: users\crn-ws1\servers_credentials.json
+2024-07-20 19:43:13 - Reading config from: users\crn-ws1\servers_credentials.json
+2024-07-20 19:43:13 - Loaded server configurations
+2024-07-20 19:43:13 - Getting drive mappings
+2024-07-20 19:43:13 - 127.0.0.1 - - [20/Jul/2024 19:43:13] "GET /list_mounted_shares HTTP/1.1" 200 -
+2024-07-20 19:43:13 - 127.0.0.1 - - [20/Jul/2024 19:43:13] "[36mGET /static/images/unmount.png HTTP/1.1[0m" 304 -
+2024-07-20 19:43:13 - Shares listed successfully
+2024-07-20 19:43:13 - 127.0.0.1 - - [20/Jul/2024 19:43:13] "GET /list_all_shares HTTP/1.1" 200 -
+2024-07-20 19:43:13 - Getting available drive letters
+2024-07-20 19:43:13 - 127.0.0.1 - - [20/Jul/2024 19:43:13] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:13 - Getting available drive letters
+2024-07-20 19:43:13 - 127.0.0.1 - - [20/Jul/2024 19:43:13] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:13 - Getting available drive letters
+2024-07-20 19:43:13 - 127.0.0.1 - - [20/Jul/2024 19:43:13] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:13 - Getting available drive letters
+2024-07-20 19:43:13 - 127.0.0.1 - - [20/Jul/2024 19:43:13] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:13 - Getting available drive letters
+2024-07-20 19:43:13 - 127.0.0.1 - - [20/Jul/2024 19:43:13] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:13 - Getting available drive letters
+2024-07-20 19:43:13 - 127.0.0.1 - - [20/Jul/2024 19:43:13] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:13 - Getting available drive letters
+2024-07-20 19:43:13 - 127.0.0.1 - - [20/Jul/2024 19:43:13] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:13 - Getting available drive letters
+2024-07-20 19:43:13 - 127.0.0.1 - - [20/Jul/2024 19:43:13] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:15 - Unmounting share on drive letter: A:
+2024-07-20 19:43:15 - 127.0.0.1 - - [20/Jul/2024 19:43:15] "POST /unmount_share HTTP/1.1" 200 -
+2024-07-20 19:43:15 - Listing all shares
+2024-07-20 19:43:15 - Listing mounted shares
+2024-07-20 19:43:15 - Current session username: crn-ws1
+2024-07-20 19:43:15 - Current session username: crn-ws1
+2024-07-20 19:43:15 - Reading config from: users\crn-ws1\servers_credentials.json
+2024-07-20 19:43:15 - Reading config from: users\crn-ws1\servers_credentials.json
+2024-07-20 19:43:15 - Loaded server configurations
+2024-07-20 19:43:15 - Getting drive mappings
+2024-07-20 19:43:15 - 127.0.0.1 - - [20/Jul/2024 19:43:15] "GET /list_mounted_shares HTTP/1.1" 200 -
+2024-07-20 19:43:15 - Shares listed successfully
+2024-07-20 19:43:15 - 127.0.0.1 - - [20/Jul/2024 19:43:15] "GET /list_all_shares HTTP/1.1" 200 -
+2024-07-20 19:43:15 - Getting available drive letters
+2024-07-20 19:43:15 - 127.0.0.1 - - [20/Jul/2024 19:43:15] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:15 - Getting available drive letters
+2024-07-20 19:43:15 - 127.0.0.1 - - [20/Jul/2024 19:43:15] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:15 - Getting available drive letters
+2024-07-20 19:43:15 - 127.0.0.1 - - [20/Jul/2024 19:43:15] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:15 - Getting available drive letters
+2024-07-20 19:43:15 - 127.0.0.1 - - [20/Jul/2024 19:43:15] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:15 - Getting available drive letters
+2024-07-20 19:43:15 - 127.0.0.1 - - [20/Jul/2024 19:43:15] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:15 - Getting available drive letters
+2024-07-20 19:43:15 - 127.0.0.1 - - [20/Jul/2024 19:43:15] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:15 - Getting available drive letters
+2024-07-20 19:43:15 - 127.0.0.1 - - [20/Jul/2024 19:43:15] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:15 - Getting available drive letters
+2024-07-20 19:43:15 - 127.0.0.1 - - [20/Jul/2024 19:43:15] "GET /available_drive_letters HTTP/1.1" 200 -
+2024-07-20 19:43:15 - Listing mounted shares
+2024-07-20 19:43:15 - Current session username: crn-ws1
+2024-07-20 19:43:15 - Reading config from: users\crn-ws1\servers_credentials.json
+2024-07-20 19:43:16 - Getting drive mappings
+2024-07-20 19:43:16 - 127.0.0.1 - - [20/Jul/2024 19:43:16] "GET /list_mounted_shares HTTP/1.1" 200 -
+2024-07-20 19:43:20 - Listing mounted shares
+2024-07-20 19:43:21 - Current session username: crn-ws1
+2024-07-20 19:43:21 - Reading config from: users\crn-ws1\servers_credentials.json
+2024-07-20 19:43:21 - Getting drive mappings
+2024-07-20 19:43:21 - 127.0.0.1 - - [20/Jul/2024 19:43:21] "GET /list_mounted_shares HTTP/1.1" 200 -
+2024-07-20 19:43:24 - b" * Serving Flask app 'app'"
+2024-07-20 19:43:24 - b' * Debug mode: on'
+2024-07-20 19:43:25 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.0.1.6:5000
+2024-07-20 19:43:25 - [33mPress CTRL+C to quit[0m
+2024-07-20 19:43:25 -  * Restarting with stat
+2024-07-20 19:43:25 -  * Debugger is active!
+2024-07-20 19:43:25 -  * Debugger PIN: 897-076-021
+2024-07-20 19:43:25 - Listing mounted shares
+2024-07-20 19:43:26 - Current session username: crn-ws1
+2024-07-20 19:43:26 - Reading config from: users\crn-ws1\servers_credentials.json
+2024-07-20 19:43:26 - Getting drive mappings
+2024-07-20 19:43:26 - 127.0.0.1 - - [20/Jul/2024 19:43:26] "GET /list_mounted_shares HTTP/1.1" 200 -
+2024-07-20 19:43:30 - Listing mounted shares
+2024-07-20 19:43:31 - Current session username: crn-ws1
+2024-07-20 19:43:31 - Reading config from: users\crn-ws1\servers_credentials.json
+2024-07-20 19:43:31 - Getting drive mappings
+2024-07-20 19:43:31 - 127.0.0.1 - - [20/Jul/2024 19:43:31] "GET /list_mounted_shares HTTP/1.1" 200 -

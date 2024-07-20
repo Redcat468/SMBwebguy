@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 10px;
+    margin: 0;
+    text-align: center;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    width: auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Start of Selection */
+.btn-success, .btn-danger, .btn-warning {
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: 1px solid #000000; /* Thicker border for the table */
+    cursor: pointer;
+    width: auto;
+    max-width: 200px;
+    margin: 10 auto; /* Added more space above buttons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+}
+/* End of Selection */
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: black;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.banner {
+    width: 100%;
+    max-width: 300px;
+    max-height: 100px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 20px; /* Added more space between input fields */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin: 5px auto;
+}
+
+button {
+    padding: 8px 20px;
+    border: none;
+    background-color: #007bff;
+    border: 1px solid #000000; /* Thicker border for the table */
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 200px;
+    margin: 15px auto; /* Added more space above buttons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Table styles */
+table {
+    width: auto;
+    border-collapse: separate; /* Use separate border model to allow border radius */
+    border-spacing: 0; /* Remove spacing between cells */
+    margin-top: 20px;
+    margin: 0 auto;
+    border: 1px solid #494949; /* Thicker border for the table */
+    border-radius: 10px; /* Rounded corners for the table */
+    overflow: hidden; /* Ensure rounded corners are visible */
+}
+
+/* Header styles */
+thead tr {
+    background-color: #f2f2f2; /* Light gray background for header */
+    color: #333; /* Darker text color for header */
+}
+
+thead th {
+    padding: 10px; /* Padding for header cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #494949; /* Border bottom for header cells */
+}
+
+/* Body row styles */
+tbody tr {
+    border-bottom: 1px solid #ddd; /* Light gray border between rows */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light gray background for even rows */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff; /* White background for odd rows */
+}
+
+/* Cell styles */
+td {
+    padding: 8px; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+}
+
+/* Actions button styles */
+td button, td select {
+    width: 100%;
+    padding: 5px;
+    margin: 2px 0;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+td button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+td button:hover {
+    background-color: #0056b3;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    th, td {
+        padding: 5px;
+    }
+
+    button, .btn-custom {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+}

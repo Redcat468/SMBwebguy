@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='images/bandeau.png') }}" alt="Banner" class="banner">
+        <h3 class="mt-4">User manager</h3>
+        <div>
+            <input type="text" id="username" placeholder="Enter username">
+        </div>
+        <div>
+            <input type="password" id="password" placeholder="Enter password">
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+            <button class="btn btn-primary btn-custom" onclick="createUser()">
+                <span style="font-size: 14px;">Create User</span>
+            </button>
+        </div>
+        <h3 class="mt-4">Existing Users</h3>
+        <table id="users_table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="users_body">
+                <!-- Users will be populated here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script src="{{ url_for('static', filename='js/create_user.js') }}"></script>
+</body>
+</html>

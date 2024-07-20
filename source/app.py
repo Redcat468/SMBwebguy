@@ -1,75 +1,22 @@
-from flask import Flask, render_template, request, jsonify, redirect, url_for, session
 import os
 import json
 import base64
 import sys
-import logging
-from logging.handlers import RotatingFileHandler
 import datetime
-import win32wnet
-import win32netcon
-import win32net
-import win32api
 import string
 import binascii
+from flask import Flask, render_template, request, jsonify, redirect, url_for, session
 
-# Setup logging
-LOG_FILE = "app.log"
-MAX_LOG_LINES = 20000
-
-
-# Define a custom logging handler
-class CustomRotatingFileHandler(RotatingFileHandler):
-    def emit(self, record):
-        record.msg = (
-            f'{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - {record.msg}'
-        )
-        super().emit(record)
-        self.truncate_log_file()
-
-    def truncate_log_file(self):
-        with open(self.baseFilename, "r+") as file:
-            lines = file.readlines()
-            if len(lines) > MAX_LOG_LINES:
-                file.seek(0)
-                file.writelines(lines[-MAX_LOG_LINES:])
-                file.truncate()
-
-
-# Initialize the rotating file handler
-handler = CustomRotatingFileHandler(LOG_FILE, maxBytes=5 * 1024 * 1024, backupCount=1)
-handler.setFormatter(logging.Formatter("%(message)s"))
-
-logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
-logger.addHandler(handler)
-
-# Also log to console
-console_handler = logging.StreamHandler()
-console_handler.setFormatter(logging.Formatter("%(message)s"))
-logger.addHandler(console_handler)
-
-
-# Redirect stdout and stderr to the logger
-class StreamToLogger:
-    def __init__(self, logger, log_level):
-        self.logger = logger
-        self.log_level = log_level
-        self.linebuf = ""
-
-    def write(self, buf):
-        for line in buf.rstrip().splitlines():
-            self.logger.log(self.log_level, line.rstrip())
-
-    def flush(self):
-        pass
-
-
-sys.stdout = StreamToLogger(logger, logging.INFO)
-sys.stderr = StreamToLogger(logger, logging.ERROR)
+try:
+    import win32wnet
+    import win32netcon
+    import win32net
+    import win32api
+except ImportError as e:
+    print(f"Import error: {e}")
 
 app = Flask(__name__)
-app.secret_key = "supersecretkey"  # Change this to a random secret key
+app.secret_key = "supersecretkey"
 
 # Paths to JSON files
 USERS_FILE = "users.json"
@@ -78,12 +25,10 @@ DEFAULT_PRESET_FILE = "mappings.json"
 
 
 def disconnect_all_smb_shares():
-    logger.info("Disconnecting all SMB shares")
     os.system("net use * /d /y")
 
 
 def add_user_directory(username):
-    logger.info(f"Adding user directory for {username}")
     user_dir = os.path.join("users", username)
     os.makedirs(user_dir, exist_ok=True)
     # Créer des fichiers JSON par défaut pour l'utilisateur s'ils n'existent pas déjà
@@ -108,12 +53,9 @@ def create_user():
         username = data.get("username")
         password = data.get("password")
 
-        logger.info(f"Creating user: {username}")
-
         # Ensure the global USERS_FILE path is used
         users = read_config(USERS_FILE, is_absolute_path=True)
         if next((u for u in users if u["username"] == username), None):
-            logger.info(f"User {username} already exists")
             return jsonify({"status": "error", "message": "User already exists"})
 
         users.append({"username": username, "password": password})
@@ -128,7 +70,6 @@ def create_user():
 
 def get_user_directory():
     username = session.get("username")
-    logger.info(f"Current session username: {username}")
     if username:
         return os.path.join("users", username)
     return None
@@ -143,8 +84,6 @@ def read_config(file_name, is_absolute_path=False):
             file_path = file_name  # Use global path if no user is logged in
     else:
         file_path = file_name
-
-    logger.info(f"Reading config from: {file_path}")
 
     if not os.path.exists(file_path):
         return []
@@ -161,15 +100,12 @@ def write_config(file_path, config, is_absolute_path=False):
         if user_dir:
             file_path = os.path.join(user_dir, file_path)
 
-    logger.info(f"Writing config to: {file_path}")
-
     with open(file_path, "w") as file:
         json.dump(config, file)
 
 
 @app.route("/")
 def index():
-    logger.info("Accessing index")
     if "username" in session:
         return redirect(url_for("list_shares"))
     return redirect(url_for("login"))
@@ -182,22 +118,14 @@ def login():
         username = data.get("username")
         password_b64 = data.get("password")
 
-        logger.info(f"Attempting login with username: {username}")
-
-        # Verify if the password is a valid base64 encoded string
         try:
-            logger.info(f"Received password")
-            # Check if the length of the base64 string is valid
             if len(password_b64) % 4 != 0:
                 raise ValueError("Invalid password length")
             password = base64.b64decode(password_b64).decode()
-            logger.info(f"Password decoded successfully")
         except (TypeError, binascii.Error, UnicodeDecodeError, ValueError) as e:
-            logger.error(f"Error decoding password: {e}")
             return jsonify({"status": "error", "message": "Invalid password format"})
 
         users = read_config(USERS_FILE)
-        logger.info(f"Loaded users")
 
         user = next((u for u in users if u["username"] == username), None)
         if user:
@@ -205,19 +133,15 @@ def login():
                 stored_password = base64.b64decode(user["password"]).decode()
                 if stored_password == password:
                     session["username"] = username
-                    logger.info(f"Login successful for user: {username}")
-                    # Create user directory if it does not exist
                     add_user_directory(username)
                     disconnect_all_smb_shares()
                     mount_disks_for_user()
                     return jsonify({"status": "success"})
                 else:
-                    logger.error(f"Invalid credentials for user: {username}")
                     return jsonify(
                         {"status": "error", "message": "Invalid credentials"}
                     )
             except (TypeError, binascii.Error, UnicodeDecodeError) as e:
-                logger.error(f"Error decoding stored password: {e}")
                 return jsonify(
                     {
                         "status": "error",
@@ -225,7 +149,6 @@ def login():
                     }
                 )
 
-        logger.error(f"User not found: {username}")
         return jsonify({"status": "error", "message": "Invalid credentials"})
 
     return render_template("login.html")
@@ -233,7 +156,6 @@ def login():
 
 @app.route("/logout", methods=["POST"])
 def logout():
-    logger.info("Logging out")
     disconnect_all_smb_shares()
     session.pop("username", None)
     return jsonify({"status": "success"})
@@ -241,7 +163,6 @@ def logout():
 
 @app.route("/list_shares")
 def list_shares():
-    logger.info("Listing shares")
     if "username" not in session:
         return redirect(url_for("login"))
     return render_template("list_shares.html")
@@ -249,7 +170,6 @@ def list_shares():
 
 @app.route("/config_servers")
 def config_servers():
-    logger.info("Configuring servers")
     if "username" not in session:
         return redirect(url_for("login"))
     return render_template("config_servers.html")
@@ -257,7 +177,6 @@ def config_servers():
 
 @app.route("/get_users", methods=["GET"])
 def get_users():
-    logger.info("Getting users")
     users = read_config(USERS_FILE)
     return jsonify({"status": "success", "users": users})
 
@@ -267,8 +186,6 @@ def delete_user():
     data = request.json
     username = data.get("username")
 
-    logger.info(f"Deleting user: {username}")
-
     users = read_config(USERS_FILE)
     users = [u for u in users if u["username"] != username]
     write_config(USERS_FILE, users)
@@ -277,7 +194,6 @@ def delete_user():
 
 @app.route("/get_servers", methods=["GET"])
 def get_servers():
-    logger.info("Getting servers")
     config = read_config("servers_credentials.json")
     return jsonify(config)
 
@@ -291,11 +207,8 @@ def add_server():
     server_ip = data.get("server_ip")
     nickname = data.get("nickname")
 
-    logger.info(f"Adding server: {server_ip} with nickname: {nickname}")
-
     response = os.system(f"ping -n 1 {server_ip}")
     if response != 0:
-        logger.info(f"Server {server_ip} is not reachable")
         return jsonify(
             {"status": "error", "message": "Server is not reachable on the network"}
         )
@@ -308,7 +221,6 @@ def add_server():
 
         win32wnet.WNetAddConnection2(net_resource, password, username)
     except Exception as e:
-        logger.error(f"Error adding server: {e}")
         return jsonify({"status": "error", "message": str(e)})
 
     config = read_config("servers_credentials.json")
@@ -329,8 +241,6 @@ def delete_server():
     data = request.json
     server_ip = data.get("server_ip")
 
-    logger.info(f"Deleting server: {server_ip}")
-
     config = read_config("servers_credentials.json")
     config = [server for server in config if server["server_ip"] != server_ip]
     write_config("servers_credentials.json", config)
@@ -339,13 +249,10 @@ def delete_server():
 
 @app.route("/list_all_shares", methods=["GET"])
 def list_all_shares():
-    logger.info("Listing all shares")
     if "username" not in session:
-        logger.error("User not authenticated")
         return jsonify({"status": "error", "message": "User not authenticated"}), 401
 
     config = read_config(CONFIG_FILE)
-    logger.info(f"Loaded server configurations")
     all_shares = []
     for server in config:
         server_ip = server["server_ip"]
@@ -361,7 +268,6 @@ def list_all_shares():
 
             win32wnet.WNetAddConnection2(net_resource, password, username)
         except Exception as e:
-            logger.error(f"Error connecting to server {server_ip}: {e}")
             continue
 
         try:
@@ -377,16 +283,13 @@ def list_all_shares():
                     }
                 )
         except Exception as e:
-            logger.error(f"Error listing shares on server {server_ip}: {e}")
             continue
 
-    logger.info(f"Shares listed successfully")
     return jsonify({"status": "success", "shares": all_shares})
 
 
 @app.route("/list_mounted_shares", methods=["GET"])
 def list_mounted_shares():
-    logger.info("Listing mounted shares")
     config = read_config(CONFIG_FILE)
     mounted_shares = []
     drive_mappings = get_drive_mappings()
@@ -416,8 +319,6 @@ def mount_share():
     share_name = data.get("share_name")
     new_drive_letter = data.get("drive_letter")
 
-    logger.info(f"Mounting share {share_name} from {server_ip} on {new_drive_letter}")
-
     try:
         network_path = f"\\\\{server_ip}\\{share_name}"
 
@@ -441,7 +342,6 @@ def mount_share():
         win32wnet.WNetAddConnection2(net_resource, password, username)
         response = {"status": "success"}
     except Exception as e:
-        logger.error(f"Error mounting share: {e}")
         response = {"output": str(e), "status": "error"}
     return jsonify(response)
 
@@ -453,14 +353,11 @@ def unmount_share():
         "drive_letter"
     ).upper()  # Ensure drive letter is in upper case
 
-    logger.info(f"Unmounting share on drive letter: {drive_letter}")
-
     try:
         win32wnet.WNetCancelConnection2(f"{drive_letter}", 0, 0)
         response = {"status": "success"}
     except win32wnet.error as e:
         error_code, _, error_message = e.args
-        logger.error(f"Error unmounting share: {error_message}")
         response = {
             "output": f"({error_code}, 'WNetCancelConnection2', '{error_message}')",
             "status": "error",
@@ -470,7 +367,6 @@ def unmount_share():
 
 @app.route("/available_drive_letters", methods=["GET"])
 def available_drive_letters():
-    logger.info("Getting available drive letters")
     try:
         all_drive_letters = set(string.ascii_uppercase)
         used_drive_letters = set(
@@ -483,14 +379,12 @@ def available_drive_letters():
 
         response = {"letters": available_drive_letters, "status": "success"}
     except Exception as e:
-        logger.error(f"Error getting available drive letters: {e}")
         response = {"output": str(e), "status": "error"}
     return jsonify(response)
 
 
 @app.route("/save_mapping_preset", methods=["POST"])
 def save_mapping_preset():
-    logger.info("Saving mapping preset")
     drive_mappings = get_drive_mappings()
     new_mappings = []
     for remote_name, drive_letter in drive_mappings.items():
@@ -513,7 +407,6 @@ def save_mapping_preset():
 
 
 def get_drive_mappings():
-    logger.info("Getting drive mappings")
     drive_mappings = {}
     drives = win32api.GetLogicalDriveStrings().split("\x00")[:-1]
     for drive in drives:
@@ -551,46 +444,29 @@ def mount_disks():
 
 
 def mount_disks_for_user():
-    logger.info("Mounting disks for user")
     try:
         user_dir = get_user_directory()
         if not user_dir:
-            logger.error("No user directory found.")
-            logger.error("Error: No user directory found.")
             return jsonify({"status": "error", "message": "No user directory found"})
 
         mappings_file = os.path.join(user_dir, "mappings.json")
         if not os.path.exists(mappings_file):
-            logger.error(f"Mappings file not found at {mappings_file}.")
-            logger.error(f"Error: Mappings file not found at {mappings_file}.")
             return jsonify({"status": "error", "message": "Mappings file not found"})
 
         config_file = os.path.join(user_dir, "servers_credentials.json")
         if not os.path.exists(config_file):
-            logger.error(f"Server credentials file not found at {config_file}.")
-            logger.error(f"Error: Server credentials file not found at {config_file}.")
             return jsonify(
                 {"status": "error", "message": "Server credentials file not found"}
             )
 
-        # Log the paths to the files
-        logger.info(f"Reading mappings from {mappings_file}")
-        logger.info(f"Reading server credentials from {config_file}")
-
         mappings = read_config(mappings_file, is_absolute_path=True)
         if not mappings or not mappings[0].get("mappings"):
-            logger.error(f"Mappings file is empty or invalid: {mappings}")
-            logger.error("Error: Mappings file is empty or invalid.")
             return jsonify(
                 {"status": "error", "message": "Mappings file is empty or invalid"}
             )
 
         mappings_list = mappings[0].get("mappings", [])
         servers = read_config(config_file, is_absolute_path=True)
-
-        # Log the contents of the mappings and servers
-        logger.info(f"Loaded mappings")
-        logger.info(f"Loaded server configurations")
 
         all_results = []
 
@@ -602,8 +478,6 @@ def mount_disks_for_user():
             # Find server credentials
             server = next((s for s in servers if s["server_ip"] == server_ip), None)
             if not server:
-                logger.error(f"Server {server_ip} not found in configuration")
-                logger.error(f"Error: Server {server_ip} not found in configuration")
                 all_results.append(
                     {
                         "server_ip": server_ip,
@@ -615,35 +489,21 @@ def mount_disks_for_user():
 
             username = server["username"]
             password = base64.b64decode(server["password"]).decode()
-            logger.info(
-                f"Mounting {share_name} from {server_ip} on {drive_letter} using username {username}"
-            )
 
             # Attempt to mount the share
             result = mount_share_with_args(
                 server_ip, share_name, username, password, drive_letter
             )
-            if result["status"] != "success":
-                logger.error(
-                    f"Failed to mount {share_name} from {server_ip} on {drive_letter}: {result['output']}"
-                )
-                logger.error(
-                    f"Error: Failed to mount {share_name} from {server_ip} on {drive_letter}"
-                )
             all_results.append(result)
 
-        logger.info("Mounting completed")
         return jsonify({"status": "success", "results": all_results})
     except Exception as e:
-        logger.error(f"Error in mount_disks_for_user: {e}")
-        logger.error(f"Error in mount_disks_for_user: {e}")
         return jsonify({"status": "error", "message": str(e)})
 
 
 def mount_share_with_args(server_ip, share_name, username, password, new_drive_letter):
     try:
         network_path = f"\\\\{server_ip}\\{share_name}"
-        logger.info(f"Attempting to mount {network_path} on {new_drive_letter}")
 
         # Check if the share is already mounted
         drive_mappings = get_drive_mappings()
@@ -654,9 +514,6 @@ def mount_share_with_args(server_ip, share_name, username, password, new_drive_l
                 break
 
         if current_drive_letter:
-            logger.info(
-                f"Share already mounted on {current_drive_letter}, disconnecting"
-            )
             win32wnet.WNetCancelConnection2(f"{current_drive_letter}", 0, 0)
 
         net_resource = win32wnet.NETRESOURCE()
@@ -666,10 +523,8 @@ def mount_share_with_args(server_ip, share_name, username, password, new_drive_l
         net_resource.dwType = win32netcon.RESOURCETYPE_DISK
 
         win32wnet.WNetAddConnection2(net_resource, password, username)
-        logger.info(f"Successfully mounted {network_path} on {new_drive_letter}")
         return {"status": "success"}
     except Exception as e:
-        logger.error(f"Error mounting {network_path} on {new_drive_letter}: {e}")
         return {"output": str(e), "status": "error"}
 
 
