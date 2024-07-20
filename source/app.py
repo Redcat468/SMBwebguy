@@ -94,19 +94,19 @@ def create_user():
         username = data.get('username')
         password = data.get('password')
 
-        users = read_config(USERS_FILE)
+        # Ensure the global USERS_FILE path is used
+        users = read_config(USERS_FILE, is_absolute_path=True)
         if next((u for u in users if u['username'] == username), None):
             return jsonify({'status': 'error', 'message': 'User already exists'})
 
         users.append({'username': username, 'password': password})
-        write_config(USERS_FILE, users)
+        write_config(USERS_FILE, users, is_absolute_path=True)
         
         # Créer un répertoire pour le nouvel utilisateur
         add_user_directory(username)
 
         return jsonify({'status': 'success'})
     return render_template('create_user.html')
-
 
 def get_user_directory():
     username = session.get('username')
