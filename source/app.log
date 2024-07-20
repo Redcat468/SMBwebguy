@@ -363,3 +363,189 @@
 2024-07-20 18:23:21 - Current session username: admin
 2024-07-20 18:23:21 - Reading config from: users\admin\users.json
 2024-07-20 18:23:21 - 127.0.0.1 - - [20/Jul/2024 18:23:21] "GET /get_users HTTP/1.1" 200 -
+2024-07-20 18:23:58 - 127.0.0.1 - - [20/Jul/2024 18:23:58] "GET /create_user HTTP/1.1" 200 -
+2024-07-20 18:23:58 - 127.0.0.1 - - [20/Jul/2024 18:23:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 18:23:58 - 127.0.0.1 - - [20/Jul/2024 18:23:58] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 18:23:58 - 127.0.0.1 - - [20/Jul/2024 18:23:58] "[36mGET /static/js/create_user.js HTTP/1.1[0m" 304 -
+2024-07-20 18:23:58 - Current session username: admin
+2024-07-20 18:23:58 - Reading config from: users\admin\users.json
+2024-07-20 18:23:58 - 127.0.0.1 - - [20/Jul/2024 18:23:58] "GET /get_users HTTP/1.1" 200 -
+2024-07-20 18:24:07 - 127.0.0.1 - - [20/Jul/2024 18:24:07] "GET /create_user HTTP/1.1" 200 -
+2024-07-20 18:24:07 - 127.0.0.1 - - [20/Jul/2024 18:24:07] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 18:24:07 - 127.0.0.1 - - [20/Jul/2024 18:24:07] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 18:24:07 - 127.0.0.1 - - [20/Jul/2024 18:24:07] "[36mGET /static/js/create_user.js HTTP/1.1[0m" 304 -
+2024-07-20 18:24:07 - Current session username: admin
+2024-07-20 18:24:07 - Reading config from: users\admin\users.json
+2024-07-20 18:24:07 - 127.0.0.1 - - [20/Jul/2024 18:24:07] "GET /get_users HTTP/1.1" 200 -
+2024-07-20 18:24:37 - 127.0.0.1 - - [20/Jul/2024 18:24:37] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 18:24:40 - Reading config from: users.json
+2024-07-20 18:24:40 - 127.0.0.1 - - [20/Jul/2024 18:24:40] "POST /create_user HTTP/1.1" 200 -
+2024-07-20 18:25:25 - 127.0.0.1 - - [20/Jul/2024 18:25:25] "[32mGET / HTTP/1.1[0m" 302 -
+2024-07-20 18:25:25 - 127.0.0.1 - - [20/Jul/2024 18:25:25] "GET /list_shares HTTP/1.1" 200 -
+2024-07-20 18:25:25 - 127.0.0.1 - - [20/Jul/2024 18:25:25] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 18:25:25 - 127.0.0.1 - - [20/Jul/2024 18:25:25] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 18:25:25 - 127.0.0.1 - - [20/Jul/2024 18:25:25] "GET /static/images/logout.png HTTP/1.1" 200 -
+2024-07-20 18:25:25 - 127.0.0.1 - - [20/Jul/2024 18:25:25] "GET /static/js/list_shares.js HTTP/1.1" 200 -
+2024-07-20 18:25:25 - 127.0.0.1 - - [20/Jul/2024 18:25:25] "GET /static/images/save.png HTTP/1.1" 200 -
+2024-07-20 18:25:25 - 127.0.0.1 - - [20/Jul/2024 18:25:25] "GET /static/images/reset.png HTTP/1.1" 200 -
+2024-07-20 18:25:25 - 127.0.0.1 - - [20/Jul/2024 18:25:25] "GET /static/images/back.png HTTP/1.1" 200 -
+2024-07-20 18:25:25 - Current session username: admin
+2024-07-20 18:25:25 - Current session username: admin
+2024-07-20 18:25:25 - Reading config from: users\admin\servers_credentials.json
+2024-07-20 18:25:25 - Reading config from: users\admin\servers_credentials.json
+2024-07-20 18:25:25 - Loaded server configurations: []
+2024-07-20 18:25:25 - 127.0.0.1 - - [20/Jul/2024 18:25:25] "GET /list_mounted_shares HTTP/1.1" 200 -
+2024-07-20 18:25:25 - Shares: []
+2024-07-20 18:25:25 - 127.0.0.1 - - [20/Jul/2024 18:25:25] "GET /list_all_shares HTTP/1.1" 200 -
+2024-07-20 18:25:30 - Current session username: admin
+2024-07-20 18:25:30 - Reading config from: users\admin\servers_credentials.json
+2024-07-20 18:25:30 - 127.0.0.1 - - [20/Jul/2024 18:25:30] "GET /list_mounted_shares HTTP/1.1" 200 -
+2024-07-20 18:25:33 - 127.0.0.1 - - [20/Jul/2024 18:25:33] "GET /list_shares HTTP/1.1" 200 -
+2024-07-20 18:25:33 - 127.0.0.1 - - [20/Jul/2024 18:25:33] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 18:25:33 - 127.0.0.1 - - [20/Jul/2024 18:25:33] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 18:25:33 - 127.0.0.1 - - [20/Jul/2024 18:25:33] "[36mGET /static/images/logout.png HTTP/1.1[0m" 304 -
+2024-07-20 18:25:33 - 127.0.0.1 - - [20/Jul/2024 18:25:33] "[36mGET /static/images/save.png HTTP/1.1[0m" 304 -
+2024-07-20 18:25:33 - 127.0.0.1 - - [20/Jul/2024 18:25:33] "[36mGET /static/images/reset.png HTTP/1.1[0m" 304 -
+2024-07-20 18:25:33 - 127.0.0.1 - - [20/Jul/2024 18:25:33] "[36mGET /static/images/back.png HTTP/1.1[0m" 304 -
+2024-07-20 18:25:33 - 127.0.0.1 - - [20/Jul/2024 18:25:33] "[36mGET /static/js/list_shares.js HTTP/1.1[0m" 304 -
+2024-07-20 18:25:33 - Current session username: admin
+2024-07-20 18:25:33 - Current session username: admin
+2024-07-20 18:25:33 - Reading config from: users\admin\servers_credentials.json
+2024-07-20 18:25:33 - Reading config from: users\admin\servers_credentials.json
+2024-07-20 18:25:33 - Loaded server configurations: []
+2024-07-20 18:25:33 - 127.0.0.1 - - [20/Jul/2024 18:25:33] "GET /list_mounted_shares HTTP/1.1" 200 -
+2024-07-20 18:25:33 - Shares: []
+2024-07-20 18:25:33 - 127.0.0.1 - - [20/Jul/2024 18:25:33] "GET /list_all_shares HTTP/1.1" 200 -
+2024-07-20 18:25:35 - 127.0.0.1 - - [20/Jul/2024 18:25:35] "POST /logout HTTP/1.1" 200 -
+2024-07-20 18:25:35 - 127.0.0.1 - - [20/Jul/2024 18:25:35] "GET /login HTTP/1.1" 200 -
+2024-07-20 18:25:35 - 127.0.0.1 - - [20/Jul/2024 18:25:35] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 18:25:35 - 127.0.0.1 - - [20/Jul/2024 18:25:35] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 18:25:35 - 127.0.0.1 - - [20/Jul/2024 18:25:35] "GET /static/js/login.js HTTP/1.1" 200 -
+2024-07-20 18:25:46 - 127.0.0.1 - - [20/Jul/2024 18:25:46] "[32mGET /list_shares HTTP/1.1[0m" 302 -
+2024-07-20 18:25:46 - 127.0.0.1 - - [20/Jul/2024 18:25:46] "GET /login HTTP/1.1" 200 -
+2024-07-20 18:25:46 - 127.0.0.1 - - [20/Jul/2024 18:25:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 18:25:46 - 127.0.0.1 - - [20/Jul/2024 18:25:46] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 18:25:46 - 127.0.0.1 - - [20/Jul/2024 18:25:46] "[36mGET /static/js/login.js HTTP/1.1[0m" 304 -
+2024-07-20 18:25:52 - Attempting login with username: crn-ws1
+2024-07-20 18:25:52 - Received Base64 password: Y3Jud3M=
+2024-07-20 18:25:52 - Decoded password: crnws
+2024-07-20 18:25:52 - Current session username: None
+2024-07-20 18:25:52 - Reading config from: users.json
+2024-07-20 18:25:52 - Loaded users: [{'username': 'crn-ws1', 'password': 'Y3Jud3M='}, {'username': 'admin', 'password': 'cGFzcw=='}]
+2024-07-20 18:25:52 - Login successful for user: crn-ws1
+2024-07-20 18:25:52 - Current session username: crn-ws1
+2024-07-20 18:25:52 - Reading mappings from users\crn-ws1\mappings.json
+2024-07-20 18:25:52 - Reading server credentials from users\crn-ws1\servers_credentials.json
+2024-07-20 18:25:52 - Reading config from: users\crn-ws1\mappings.json
+2024-07-20 18:25:52 - Mappings file is empty or invalid: [{'preset_name': 'default', 'mappings': []}]
+2024-07-20 18:25:52 - 127.0.0.1 - - [20/Jul/2024 18:25:52] "POST /login HTTP/1.1" 200 -
+2024-07-20 18:25:52 - 127.0.0.1 - - [20/Jul/2024 18:25:52] "GET /list_shares HTTP/1.1" 200 -
+2024-07-20 18:25:52 - 127.0.0.1 - - [20/Jul/2024 18:25:52] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 18:25:52 - 127.0.0.1 - - [20/Jul/2024 18:25:52] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 18:25:52 - 127.0.0.1 - - [20/Jul/2024 18:25:52] "[36mGET /static/images/logout.png HTTP/1.1[0m" 304 -
+2024-07-20 18:25:52 - 127.0.0.1 - - [20/Jul/2024 18:25:52] "[36mGET /static/images/save.png HTTP/1.1[0m" 304 -
+2024-07-20 18:25:52 - 127.0.0.1 - - [20/Jul/2024 18:25:52] "[36mGET /static/images/reset.png HTTP/1.1[0m" 304 -
+2024-07-20 18:25:52 - 127.0.0.1 - - [20/Jul/2024 18:25:52] "[36mGET /static/js/list_shares.js HTTP/1.1[0m" 304 -
+2024-07-20 18:25:52 - 127.0.0.1 - - [20/Jul/2024 18:25:52] "[36mGET /static/images/back.png HTTP/1.1[0m" 304 -
+2024-07-20 18:25:52 - Current session username: crn-ws1
+2024-07-20 18:25:52 - Current session username: crn-ws1
+2024-07-20 18:25:52 - Reading config from: users\crn-ws1\servers_credentials.json
+2024-07-20 18:25:52 - Reading config from: users\crn-ws1\servers_credentials.json
+2024-07-20 18:25:52 - Loaded server configurations: []
+2024-07-20 18:25:52 - 127.0.0.1 - - [20/Jul/2024 18:25:52] "GET /list_mounted_shares HTTP/1.1" 200 -
+2024-07-20 18:25:52 - Shares: []
+2024-07-20 18:25:52 - 127.0.0.1 - - [20/Jul/2024 18:25:52] "GET /list_all_shares HTTP/1.1" 200 -
+2024-07-20 18:25:57 - 127.0.0.1 - - [20/Jul/2024 18:25:57] "POST /logout HTTP/1.1" 200 -
+2024-07-20 18:25:57 - 127.0.0.1 - - [20/Jul/2024 18:25:57] "GET /login HTTP/1.1" 200 -
+2024-07-20 18:25:57 - 127.0.0.1 - - [20/Jul/2024 18:25:57] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 18:25:57 - 127.0.0.1 - - [20/Jul/2024 18:25:57] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 18:25:57 - 127.0.0.1 - - [20/Jul/2024 18:25:57] "[36mGET /static/js/login.js HTTP/1.1[0m" 304 -
+2024-07-20 18:26:02 - 127.0.0.1 - - [20/Jul/2024 18:26:02] "GET /create_user HTTP/1.1" 200 -
+2024-07-20 18:26:02 - 127.0.0.1 - - [20/Jul/2024 18:26:02] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 18:26:02 - 127.0.0.1 - - [20/Jul/2024 18:26:02] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 18:26:02 - 127.0.0.1 - - [20/Jul/2024 18:26:02] "[36mGET /static/js/create_user.js HTTP/1.1[0m" 304 -
+2024-07-20 18:26:02 - Current session username: None
+2024-07-20 18:26:02 - Reading config from: users.json
+2024-07-20 18:26:02 - 127.0.0.1 - - [20/Jul/2024 18:26:02] "GET /get_users HTTP/1.1" 200 -
+2024-07-20 18:26:05 - Current session username: None
+2024-07-20 18:26:05 - Reading config from: users.json
+2024-07-20 18:26:05 - Current session username: None
+2024-07-20 18:26:05 - Writing config to: users.json
+2024-07-20 18:26:05 - 127.0.0.1 - - [20/Jul/2024 18:26:05] "POST /delete_user HTTP/1.1" 200 -
+2024-07-20 18:26:05 - Current session username: None
+2024-07-20 18:26:05 - Reading config from: users.json
+2024-07-20 18:26:05 - 127.0.0.1 - - [20/Jul/2024 18:26:05] "GET /get_users HTTP/1.1" 200 -
+2024-07-20 18:26:07 - Reading config from: users.json
+2024-07-20 18:26:07 - Writing config to: users.json
+2024-07-20 18:26:07 - 127.0.0.1 - - [20/Jul/2024 18:26:07] "POST /create_user HTTP/1.1" 200 -
+2024-07-20 18:26:07 - Current session username: None
+2024-07-20 18:26:07 - Reading config from: users.json
+2024-07-20 18:26:07 - 127.0.0.1 - - [20/Jul/2024 18:26:07] "GET /get_users HTTP/1.1" 200 -
+2024-07-20 18:26:10 - Current session username: None
+2024-07-20 18:26:10 - Reading config from: users.json
+2024-07-20 18:26:10 - Current session username: None
+2024-07-20 18:26:10 - Writing config to: users.json
+2024-07-20 18:26:10 - 127.0.0.1 - - [20/Jul/2024 18:26:10] "POST /delete_user HTTP/1.1" 200 -
+2024-07-20 18:26:10 - Current session username: None
+2024-07-20 18:26:10 - Reading config from: users.json
+2024-07-20 18:26:10 - 127.0.0.1 - - [20/Jul/2024 18:26:10] "GET /get_users HTTP/1.1" 200 -
+2024-07-20 18:26:10 - 127.0.0.1 - - [20/Jul/2024 18:26:10] "GET /create_user HTTP/1.1" 200 -
+2024-07-20 18:26:11 - 127.0.0.1 - - [20/Jul/2024 18:26:11] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 18:26:11 - 127.0.0.1 - - [20/Jul/2024 18:26:11] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 18:26:11 - 127.0.0.1 - - [20/Jul/2024 18:26:11] "[36mGET /static/js/create_user.js HTTP/1.1[0m" 304 -
+2024-07-20 18:26:11 - Current session username: None
+2024-07-20 18:26:11 - Reading config from: users.json
+2024-07-20 18:26:11 - 127.0.0.1 - - [20/Jul/2024 18:26:11] "GET /get_users HTTP/1.1" 200 -
+2024-07-20 18:26:14 - User not authenticated
+2024-07-20 18:26:14 - Current session username: None
+2024-07-20 18:26:14 - 127.0.0.1 - - [20/Jul/2024 18:26:14] "[31m[1mGET /list_all_shares HTTP/1.1[0m" 401 -
+2024-07-20 18:26:14 - Reading config from: servers_credentials.json
+2024-07-20 18:26:14 - 127.0.0.1 - - [20/Jul/2024 18:26:14] "GET /list_mounted_shares HTTP/1.1" 200 -
+2024-07-20 18:26:17 - 127.0.0.1 - - [20/Jul/2024 18:26:17] "POST /logout HTTP/1.1" 200 -
+2024-07-20 18:26:17 - 127.0.0.1 - - [20/Jul/2024 18:26:17] "GET /login HTTP/1.1" 200 -
+2024-07-20 18:26:17 - 127.0.0.1 - - [20/Jul/2024 18:26:17] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 18:26:17 - 127.0.0.1 - - [20/Jul/2024 18:26:17] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 18:26:17 - 127.0.0.1 - - [20/Jul/2024 18:26:17] "[36mGET /static/js/login.js HTTP/1.1[0m" 304 -
+2024-07-20 18:26:18 - Attempting login with username: crn-ws1
+2024-07-20 18:26:18 - Received Base64 password: Y3Jud3M=
+2024-07-20 18:26:18 - Decoded password: crnws
+2024-07-20 18:26:18 - Current session username: None
+2024-07-20 18:26:18 - Reading config from: users.json
+2024-07-20 18:26:18 - Loaded users: [{'username': 'admin', 'password': 'cGFzcw=='}]
+2024-07-20 18:26:18 - User not found: crn-ws1
+2024-07-20 18:26:18 - 127.0.0.1 - - [20/Jul/2024 18:26:18] "POST /login HTTP/1.1" 200 -
+2024-07-20 18:26:21 - Attempting login with username: crn-ws1
+2024-07-20 18:26:21 - Received Base64 password: Y3Jud3M=
+2024-07-20 18:26:21 - Decoded password: crnws
+2024-07-20 18:26:21 - Current session username: None
+2024-07-20 18:26:21 - Reading config from: users.json
+2024-07-20 18:26:21 - Loaded users: [{'username': 'admin', 'password': 'cGFzcw=='}]
+2024-07-20 18:26:21 - User not found: crn-ws1
+2024-07-20 18:26:21 - 127.0.0.1 - - [20/Jul/2024 18:26:21] "POST /login HTTP/1.1" 200 -
+2024-07-20 18:26:24 - User not authenticated
+2024-07-20 18:26:24 - 127.0.0.1 - - [20/Jul/2024 18:26:24] "[31m[1mGET /list_all_shares HTTP/1.1[0m" 401 -
+2024-07-20 18:26:25 - 127.0.0.1 - - [20/Jul/2024 18:26:25] "GET /login HTTP/1.1" 200 -
+2024-07-20 18:26:26 - User not authenticated
+2024-07-20 18:26:26 - 127.0.0.1 - - [20/Jul/2024 18:26:26] "[31m[1mGET /list_all_shares HTTP/1.1[0m" 401 -
+2024-07-20 18:26:27 - 127.0.0.1 - - [20/Jul/2024 18:26:27] "[32mGET /config_servers HTTP/1.1[0m" 302 -
+2024-07-20 18:26:27 - 127.0.0.1 - - [20/Jul/2024 18:26:27] "GET /login HTTP/1.1" 200 -
+2024-07-20 18:26:27 - 127.0.0.1 - - [20/Jul/2024 18:26:27] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 18:26:27 - 127.0.0.1 - - [20/Jul/2024 18:26:27] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 18:26:27 - 127.0.0.1 - - [20/Jul/2024 18:26:27] "[36mGET /static/js/login.js HTTP/1.1[0m" 304 -
+2024-07-20 18:26:29 - User not authenticated
+2024-07-20 18:26:29 - 127.0.0.1 - - [20/Jul/2024 18:26:29] "[31m[1mGET /list_all_shares HTTP/1.1[0m" 401 -
+2024-07-20 18:26:36 - User not authenticated
+2024-07-20 18:26:36 - 127.0.0.1 - - [20/Jul/2024 18:26:36] "[31m[1mGET /list_all_shares HTTP/1.1[0m" 401 -
+2024-07-20 18:26:57 - Reading config from: users.json
+2024-07-20 18:26:57 - Writing config to: users.json
+2024-07-20 18:26:57 - 127.0.0.1 - - [20/Jul/2024 18:26:57] "POST /create_user HTTP/1.1" 200 -
+2024-07-20 18:26:57 - Current session username: None
+2024-07-20 18:26:57 - Reading config from: users.json
+2024-07-20 18:26:57 - 127.0.0.1 - - [20/Jul/2024 18:26:57] "GET /get_users HTTP/1.1" 200 -
+2024-07-20 18:27:00 - 127.0.0.1 - - [20/Jul/2024 18:27:00] "GET /create_user HTTP/1.1" 200 -
+2024-07-20 18:27:00 - 127.0.0.1 - - [20/Jul/2024 18:27:00] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-07-20 18:27:00 - 127.0.0.1 - - [20/Jul/2024 18:27:00] "[36mGET /static/images/bandeau.png HTTP/1.1[0m" 304 -
+2024-07-20 18:27:00 - 127.0.0.1 - - [20/Jul/2024 18:27:00] "[36mGET /static/js/create_user.js HTTP/1.1[0m" 304 -
+2024-07-20 18:27:00 - Current session username: None
+2024-07-20 18:27:00 - Reading config from: users.json
+2024-07-20 18:27:00 - 127.0.0.1 - - [20/Jul/2024 18:27:00] "GET /get_users HTTP/1.1" 200 -
