@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3 class="mt-4">Mounted Shares</h3>
+<table id="mounted_shares_table">
+    <thead>
+        <tr>
+            <th>Server IP</th>
+            <th>Nickname</th>
+            <th>Share Name</th>
+            <th>Drive Letter</th>
+            <th>Unmount</th>
+        </tr>
+    </thead>
+    <tbody id="mounted_shares_body">
+        <!-- Mounted shares will be populated here by JavaScript -->
+    </tbody>
+</table>
+<h3 class="mt-4">Shares List</h3>
+<table id="shares_table">
+    <thead>
+        <tr>
+            <th>Server IP</th>
+            <th>Nickname</th>
+            <th>Share Name</th>
+            <th>Drive Letter</th>
+            <th>Mount</th>
+        </tr>
+    </thead>
+    <tbody id="shares_body">
+        <!-- Shares will be populated here by JavaScript -->
+    </tbody>
+</table>
+<button onclick="saveAsDefaultMappings()" class="btn btn-primary">
+    <img src="{{ url_for('static', filename='images/save.png') }}" alt="Save" style="height: 15px; margin-right: 5px;">
+    Save current mappings as default
+</button>
+<button onclick="resetToDefaultMappings()" class="btn btn-secondary">
+    <img src="{{ url_for('static', filename='images/reset.png') }}" alt="Reset" style="height: 15px; margin-right: 5px;">
+    Reset mappings to default
+</button>
+<button onclick="goToConfigServers()" class="btn btn-secondary">
+    <img src="{{ url_for('static', filename='images/back.png') }}" alt="Back" style="height: 15px; margin-right: 5px;">
+    Configure Servers
+</button>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/list_shares.js') }}"></script>
+{% endblock %}
