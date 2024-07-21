@@ -24,7 +24,8 @@ Here is some screenshots of the application:
 ![Screenshot](snip4.png)
 
 ## Installation
-
+0. You can simply download the zip and run the exe from the latest release: https://github.com/Redcat468/SMBwebguy/releases
+or 
 1. Clone the repository:
     ```bash
     git clone https://github.com/Redcat468/SMBwebguy.git
@@ -43,7 +44,8 @@ Here is some screenshots of the application:
     ```
 
 ## Usage
-
+0. Just launch the exe
+or 
 1. Run the Flask application:
     ```bash
     python app.py
