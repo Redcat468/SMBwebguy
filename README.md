@@ -1,6 +1,7 @@
 # SMBwebguy
 
 SMBwebguy is a Flask-based web application for managing SMB shares. It allows users to log in, configure servers, and mount/unmount SMB shares.
+As a user of Avid Nexis-type storage servers, I really missed having a software like the Nexis client that allows managing many users on the same storage with different permissions, without wasting time using tedious Windows menus. So, I created a web-based version, which simplifies remote management for admins on the LAN.
 
 ## Features
 
