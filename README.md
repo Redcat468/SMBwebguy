@@ -5,8 +5,8 @@ SMBwebguy is a Flask-based web application for managing SMB shares. It allows us
 ## Features
 
 - User authentication
-- Configure SMB servers
-- List available shares on all configured servers
+- Each user can configure their own set of credentials on SMB servers
+- List available shares on all configured servers for a user
 - Mount and unmount shares on logical letters
 - Configure, save and load a default drive mapping preset
 
